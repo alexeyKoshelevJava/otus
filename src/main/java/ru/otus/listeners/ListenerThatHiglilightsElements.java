@@ -35,7 +35,7 @@ public class ListenerThatHiglilightsElements extends AbstractWebDriverEventListe
 
 
   public void flash(WebElement element, WebDriver driver) {
-    JavascriptExecutor js = ((JavascriptExecutor) driver);
+    JavascriptExecutor js = (JavascriptExecutor) driver;
     changeColor(element, js);
   }
 

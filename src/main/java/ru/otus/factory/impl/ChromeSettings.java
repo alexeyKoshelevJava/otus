@@ -16,7 +16,6 @@ public final class ChromeSettings implements BrowserSettings {
     chromeOptions.addArguments("--homepage=about:blank");
     chromeOptions.addArguments("--enable-extensions");
     chromeOptions.addArguments("--remote-allow-origins=*");
-
     return chromeOptions;
   }
 }

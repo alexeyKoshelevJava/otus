@@ -1,11 +1,9 @@
 package ru.otus.test;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import ru.otus.annotations.Driver;
 import ru.otus.extensions.UiExtension;
@@ -26,10 +24,6 @@ public class OtusTest {
     System.out.println("мой тест начал");
     MainPage mainPage = new MainPage(driver);
     mainPage.open();
-//    Thread.sleep(5000);
-////    Assertions.fail();
     System.out.println("тест закончил");
-
-
   }
 }

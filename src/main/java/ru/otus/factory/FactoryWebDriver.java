@@ -47,4 +47,3 @@ public class FactoryWebDriver {
     return eventFiringWebDriver;
   }
 }
-
