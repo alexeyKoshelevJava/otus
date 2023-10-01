@@ -23,6 +23,7 @@
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
         <allure.version>2.13.0</allure.version>
         <aspectj.version>1.9.4</aspectj.version>
+        <slf4j.version>1.7.32</slf4j.version>
     </properties>
 
     <!--  <dependencyManagement>-->
@@ -37,7 +38,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.13.0</version>
+            <version>4.12.1</version>
         </dependency>
         <dependency>
             <groupId>org.junit</groupId>
@@ -71,6 +72,16 @@
             <artifactId>allure-junit5</artifactId>
             <version>${allure.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
 
     </dependencies>

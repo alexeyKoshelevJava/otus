@@ -72,6 +72,7 @@ public class UiExtension implements BeforeEachCallback, AfterEachCallback,
 
     if (driver != null) {
 //      driver.close();
+
       driver.quit();
     }
   }

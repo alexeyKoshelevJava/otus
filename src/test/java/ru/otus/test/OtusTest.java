@@ -26,8 +26,8 @@ public class OtusTest {
     System.out.println("мой тест начал");
     MainPage mainPage = new MainPage(driver);
     mainPage.open();
-    Thread.sleep(5000);
-//    Assertions.fail();
+//    Thread.sleep(5000);
+////    Assertions.fail();
     System.out.println("тест закончил");
 
 
