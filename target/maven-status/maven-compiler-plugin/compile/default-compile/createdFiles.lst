@@ -1,0 +1,11 @@
+ru\otus\exceptions\BrowserNotSupportedException.class
+ru\otus\factory\FactoryWebDriver.class
+ru\otus\extensions\UiExtension.class
+ru\otus\pages\AbsBasePage.class
+ru\otus\factory\impl\FireFoxSetting.class
+ru\otus\factory\impl\ChromeSettings.class
+ru\otus\annotations\Driver.class
+ru\otus\pageobject\AbsPageObject.class
+ru\otus\pages\MainPage.class
+ru\otus\factory\impl\OperaSetting.class
+ru\otus\factory\impl\BrowserSettings.class

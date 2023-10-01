@@ -1,0 +1,15 @@
+#Sun Oct 01 11:43:46 MSK 2023
+configuration*?=9B96511AD4E412301DD57A324911FF46CB2BAECA
+module-resource*?\:src\\main\\resources\\suppressions.xml=B2EB63F73963E715B1F493CBCDCEFF061028801F
+C\:\\Projects\\otus\\src\\main\\java\\ru\\otus\\pages\\MainPage.java=1695998670620
+C\:\\Projects\\otus\\src\\main\\java\\ru\\otus\\factory\\impl\\OperaSetting.java=1695998670631
+C\:\\Projects\\otus\\src\\main\\java\\ru\\otus\\exceptions\\BrowserNotSupportedException.java=1695998670642
+C\:\\Projects\\otus\\src\\main\\java\\ru\\otus\\factory\\impl\\ChromeSettings.java=1696143897846
+C\:\\Projects\\otus\\src\\main\\java\\ru\\otus\\pages\\AbsBasePage.java=1695998670652
+C\:\\Projects\\otus\\src\\main\\java\\ru\\otus\\factory\\impl\\FireFoxSetting.java=1695998670685
+C\:\\Projects\\otus\\src\\test\\java\\ru\\otus\\test\\OtusTest.java=1696143947349
+C\:\\Projects\\otus\\src\\main\\java\\ru\\otus\\factory\\FactoryWebDriver.java=1695998670658
+C\:\\Projects\\otus\\src\\main\\java\\ru\\otus\\factory\\impl\\BrowserSettings.java=1695998670665
+C\:\\Projects\\otus\\src\\main\\java\\ru\\otus\\extensions\\UiExtension.java=1696143897853
+C\:\\Projects\\otus\\src\\main\\java\\ru\\otus\\annotations\\Driver.java=1696138118069
+C\:\\Projects\\otus\\src\\main\\java\\ru\\otus\\pageobject\\AbsPageObject.java=1695998670691

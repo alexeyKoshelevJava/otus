@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="C:\Projects\otus\src\main\java\ru\otus\annotations\Driver.java">
+</file>
+<file name="C:\Projects\otus\src\main\java\ru\otus\exceptions\BrowserNotSupportedException.java">
+</file>
+<file name="C:\Projects\otus\src\main\java\ru\otus\extensions\UiExtension.java">
+</file>
+<file name="C:\Projects\otus\src\main\java\ru\otus\factory\FactoryWebDriver.java">
+</file>
+<file name="C:\Projects\otus\src\main\java\ru\otus\factory\impl\BrowserSettings.java">
+</file>
+<file name="C:\Projects\otus\src\main\java\ru\otus\factory\impl\ChromeSettings.java">
+</file>
+<file name="C:\Projects\otus\src\main\java\ru\otus\factory\impl\FireFoxSetting.java">
+</file>
+<file name="C:\Projects\otus\src\main\java\ru\otus\factory\impl\OperaSetting.java">
+</file>
+<file name="C:\Projects\otus\src\main\java\ru\otus\pageobject\AbsPageObject.java">
+</file>
+<file name="C:\Projects\otus\src\main\java\ru\otus\pages\AbsBasePage.java">
+</file>
+<file name="C:\Projects\otus\src\main\java\ru\otus\pages\MainPage.java">
+</file>
+<file name="C:\Projects\otus\src\test\java\ru\otus\test\OtusTest.java">
+</file>
+</checkstyle>
