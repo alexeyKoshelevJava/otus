@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: ru.otus.test.OtusTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 17.732 s <<< FAILURE! - in ru.otus.test.OtusTest
-findCourseByNameAndCheckPrice{String}[1]  Time elapsed: 17.336 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-	at ru.otus.test.OtusTest.findCourseByNameAndCheckPrice(OtusTest.java:29)
-
