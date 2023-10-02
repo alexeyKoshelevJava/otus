@@ -1,7 +1,7 @@
 
 package ru.otus.factory;
 
-import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.events.EventFiringDecorator;
 import ru.otus.exceptions.BrowserNotSupportedException;
 import ru.otus.factory.impl.BrowserSettings;
 import ru.otus.factory.impl.ChromeSettings;
@@ -12,9 +12,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import ru.otus.listeners.ListenerThatHiglilightsElements;
+import ru.otus.listeners.ListenerThatHighlightsElements;
 
-import java.util.concurrent.TimeUnit;
 
 public class FactoryWebDriver {
   private final String browserName = System.getProperty("browser", "chrome");
@@ -35,15 +34,14 @@ public class FactoryWebDriver {
         return new FirefoxDriver((FirefoxOptions) operaSetting.configureDriver());
 
       }
-
       default -> throw new BrowserNotSupportedException(browserName);
     }
   }
 
-  public EventFiringWebDriver getDriver() {
+  public WebDriver getDriver() {
     WebDriver driver = create();
-    EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver);
-    eventFiringWebDriver.register(new ListenerThatHiglilightsElements());
-    return eventFiringWebDriver;
+    driver = new EventFiringDecorator<>(new ListenerThatHighlightsElements(driver))
+        .decorate(driver);
+    return driver;
   }
 }

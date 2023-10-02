@@ -9,37 +9,28 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.events.EventFiringDecorator;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.openqa.selenium.support.events.WebDriverListener;
 import ru.otus.annotations.Driver;
 import ru.otus.factory.FactoryWebDriver;
-
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+
 
 public class UiExtension implements BeforeEachCallback, AfterEachCallback,
     AfterTestExecutionCallback {
-  private EventFiringWebDriver driver;
+  private WebDriver driver;
 
   @Override
   public void beforeEach(ExtensionContext extensionContext) throws Exception {
     driver = new FactoryWebDriver().getDriver();
 
-    List<Field> fieldList = getAnnotationFields(Driver.class, extensionContext);
+    List<Field> fieldList = getAnnotationFields(extensionContext);
 
     for (Field field : fieldList) {
-
-      if (field.getType().getName().equals(EventFiringWebDriver.class.getName())) {
+      if (field.getType().getName().equals(WebDriver.class.getName())) {
 
         try {
           field.setAccessible(true);
@@ -51,13 +42,12 @@ public class UiExtension implements BeforeEachCallback, AfterEachCallback,
     }
   }
 
-  private List<Field> getAnnotationFields(Class<? extends Annotation> annotation,
-                                          ExtensionContext extensionContext) {
+  private List<Field> getAnnotationFields(ExtensionContext extensionContext) {
     List<Field> fieldList = new ArrayList<>();
     Class<?> testClass = extensionContext.getTestClass().get();
     while (testClass != null) {
       for (Field field : testClass.getDeclaredFields()) {
-        if (field.isAnnotationPresent(annotation)) {
+        if (field.isAnnotationPresent(Driver.class)) {
           fieldList.add(field);
         }
       }
@@ -72,7 +62,6 @@ public class UiExtension implements BeforeEachCallback, AfterEachCallback,
 
     if (driver != null) {
 //      driver.close();
-
       driver.quit();
     }
   }

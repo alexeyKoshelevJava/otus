@@ -4,17 +4,19 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.WebDriver;
 import ru.otus.annotations.Driver;
 import ru.otus.extensions.UiExtension;
 import ru.otus.pages.MainPage;
 
+
 @ExtendWith(UiExtension.class)
+
 public class OtusTest {
 
 
   @Driver
-  private EventFiringWebDriver driver;
+  private WebDriver driver;
 
 
   @ParameterizedTest
@@ -24,6 +26,8 @@ public class OtusTest {
     System.out.println("мой тест начал");
     MainPage mainPage = new MainPage(driver);
     mainPage.open();
+    mainPage.clickOn();
+
     System.out.println("тест закончил");
   }
 }

@@ -13,9 +13,10 @@ public final class ChromeSettings implements BrowserSettings {
   public MutableCapabilities configureDriver() {
     ChromeOptions chromeOptions = new ChromeOptions();
     chromeOptions.addArguments("--start-full-screen");
-    chromeOptions.addArguments("--homepage=about:blank");
+//    chromeOptions.addArguments("--homepage=about:blank");
     chromeOptions.addArguments("--enable-extensions");
-    chromeOptions.addArguments("--remote-allow-origins=*");
+//    chromeOptions.addArguments("--remote-allow-origins=*");
+    chromeOptions.addArguments("--user-data-dir=" + System.getProperty("java.io.tmpdir"));
     return chromeOptions;
   }
 }
