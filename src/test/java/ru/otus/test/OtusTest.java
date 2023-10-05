@@ -32,7 +32,7 @@ public class OtusTest {
 
   @Test
   @DisplayName("Выбор курса с самой маленькой датой")
-  public void findCourseByDateIfDateSmallerThanOthers() throws InterruptedException {
+  public void findCourseByDateIfDateSmallerThanOthers() {
     MainPage mainPage = new MainPage(driver);
     mainPage.open();
     mainPage.clickOnCourse(mainPage.findCourseByDateIfDateSmaller());
@@ -42,7 +42,7 @@ public class OtusTest {
 
   @Test
   @DisplayName("Выбор курса с самой большой датой")
-  public void findCourseByDateIfDateGraterThanOthers() throws InterruptedException {
+  public void findCourseByDateIfDateGraterThanOthers() {
     MainPage mainPage = new MainPage(driver);
     mainPage.open();
     mainPage.clickOnCourse(mainPage.findCourseByDateIfDateGrater());
