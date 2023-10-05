@@ -25,15 +25,6 @@ public class ListenerThatHighlightsElements implements WebDriverListener {
     executor.executeScript("arguments[0].scrollIntoView(true);", element);
   }
 
-  /**
-   * Снятие выделения с элемента после нажатия на него
-   * @param element web-элемент
-   */
-
-  @Override
-  public void afterClick(WebElement element) {
-    changeColorBack(element, executor);
-  }
 
   public void flash(WebElement element, WebDriver driver) {
     JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -43,11 +34,6 @@ public class ListenerThatHighlightsElements implements WebDriverListener {
   public void changeColor(WebElement element, JavascriptExecutor js) {
     js.executeScript("arguments[0].style.backgroundColor = 'grey'", element);
     js.executeScript("arguments[0].style.border='4px solid red'", element);
-  }
-
-  public void changeColorBack(WebElement element, JavascriptExecutor js) {
-    js.executeScript("arguments[0].style.backgroundColor = ''", element);
-    js.executeScript("arguments[0].style.border=''", element);
   }
 }
 

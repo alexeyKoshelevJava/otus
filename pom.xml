@@ -21,7 +21,6 @@
         <base.url>https://otus.ru</base.url>
 
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
-        <allure.version>2.13.0</allure.version>
         <aspectj.version>1.9.4</aspectj.version>
         <slf4j.version>1.7.32</slf4j.version>
     </properties>
@@ -63,17 +62,6 @@
             <version>3.141.59</version>
         </dependency>
         <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-java-commons</artifactId>
-            <version>${allure.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit5</artifactId>
-            <version>${allure.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
@@ -83,6 +71,7 @@
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+
 
     </dependencies>
     <!--  </dependencyManagement>-->
@@ -110,9 +99,6 @@
                 <version>${surefire.plugin.version}</version>
 
                 <configuration>
-                    <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                    </argLine>
                     <systemPropertyVariables>
                         <base.url>${base.url}</base.url>
                     </systemPropertyVariables>
@@ -123,12 +109,6 @@
                         <artifactId>aspectjweaver</artifactId>
                         <version>${aspectj.version}</version>
                     </dependency>
-                    <dependency>
-                        <groupId>commons-io</groupId>
-                        <artifactId>commons-io</artifactId>
-                        <version>2.11.0</version>
-                    </dependency>
-
                 </dependencies>
             </plugin>
             <plugin>
@@ -145,16 +125,6 @@
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>4.7.2.1</version>
-            </plugin>
-            <plugin>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-maven</artifactId>
-                <version>2.10.0</version>
-                <configuration>
-                    <reportVersion>${allure.version}</reportVersion>
-                    <resultsDirectory>${basedir}/allure-results</resultsDirectory>
-                    <reportDirectory>${basedir}/target/allure-reports</reportDirectory>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

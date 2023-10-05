@@ -13,6 +13,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import ru.otus.listeners.ListenerThatHighlightsElements;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 
 public class FactoryWebDriver {
@@ -22,8 +24,15 @@ public class FactoryWebDriver {
     switch (browserName) {
       case "chrome" -> {
         BrowserSettings chromeSettings = new ChromeSettings();
-        return new ChromeDriver((ChromeOptions) chromeSettings
+        WebDriver currentDriver = (WebDriver) new ChromeDriver((ChromeOptions) chromeSettings
             .configureDriver());
+        currentDriver
+            .manage()
+            .timeouts()
+            .implicitlyWait(Duration.ofSeconds(60)
+                .getSeconds(), TimeUnit.SECONDS);
+        currentDriver.manage().deleteAllCookies();
+        return currentDriver;
       }
       case "fireFox" -> {
         BrowserSettings fireFoxSetting = new FireFoxSetting();

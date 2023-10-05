@@ -1,12 +1,12 @@
 package ru.otus.test;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.WebDriver;
 import ru.otus.annotations.Driver;
 import ru.otus.extensions.UiExtension;
+import ru.otus.pages.BiCoursePage;
 import ru.otus.pages.MainPage;
 
 
@@ -19,15 +19,34 @@ public class OtusTest {
   private WebDriver driver;
 
 
-  @ParameterizedTest
-  @ValueSource(strings = {"Специализация QA Automation Engineer"})
-  @DisplayName("Выбор курса по названию и проверка полной стоимости")
-  public void findCourseByNameAndCheckPrice(String course) throws InterruptedException {
-    System.out.println("мой тест начал");
+  @Test
+  @DisplayName("Выбор курса по названию и проверка заголовка страницы курса")
+  public void findCourseByNameAndCheckTitle() {
+    String course = "BI-аналитика";
     MainPage mainPage = new MainPage(driver);
     mainPage.open();
-    mainPage.clickOn();
+    mainPage.clickOnCourseByName(course);
+    BiCoursePage biCoursePage = new BiCoursePage(driver);
+    biCoursePage.checkTitle(BiCoursePage.TITLE);
+  }
 
-    System.out.println("тест закончил");
+  @Test
+  @DisplayName("Выбор курса с самой маленькой датой")
+  public void findCourseByDateIfDateSmallerThanOthers() throws InterruptedException {
+    MainPage mainPage = new MainPage(driver);
+    mainPage.open();
+    mainPage.clickOnCourse(mainPage.findCourseByDateIfDateSmaller());
+    mainPage.checkTitleNotEmpty();
+
+  }
+
+  @Test
+  @DisplayName("Выбор курса с самой большой датой")
+  public void findCourseByDateIfDateGraterThanOthers() throws InterruptedException {
+    MainPage mainPage = new MainPage(driver);
+    mainPage.open();
+    mainPage.clickOnCourse(mainPage.findCourseByDateIfDateGrater());
+    mainPage.checkTitleNotEmpty();
   }
 }
+
